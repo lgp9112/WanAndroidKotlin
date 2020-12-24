@@ -3,14 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#ffffffff"
+        android:fitsSystemWindows="false">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -19,6 +21,34 @@
             <include layout="@layout/common_toolbar" />
 
         </com.google.android.material.appbar.AppBarLayout>
+
+        <fragment
+            android:id="@+id/my_nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_navigation"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorCard"
+            app:elevation="@dimen/dp_16"
+            app:itemIconTint="@drawable/nav_item_color_state"
+            app:itemTextColor="@drawable/nav_item_color_state"
+            app:menu="@menu/bottom_navigation_main" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -27,7 +57,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/drawer_item_bg_n"
+        android:fitsSystemWindows="false"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/nav_menu"
-        app:itemBackground="@drawable/drawer_item_bg"/>
+        app:itemBackground="@drawable/drawer_item_bg"
+        app:menu="@menu/nav_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

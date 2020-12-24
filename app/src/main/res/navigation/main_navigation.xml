@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/tab_main_pager">
+
+    <fragment
+        android:id="@+id/tab_main_pager"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.MainPagerFragment"
+        android:label="MainPagerFragment"
+        tools:layout="@layout/fragment_main_pager">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tab_knowledge_hierarchy"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.KnowledgeHierarchyFragment"
+        android:label="KnowledgeHierarchyFragment"
+        tools:layout="@layout/fragment_knowledge_hierarchy">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tab_wx_article"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.WxArticleFragment"
+        android:label="WxArticleFragment"
+        tools:layout="@layout/fragment_wx_article">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tab_navigation"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.NavigationFragment"
+        android:label="NavigationFragment"
+        tools:layout="@layout/fragment_navigation">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tab_project"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.ProjectFragment"
+        android:label="ProjectFragment"
+        tools:layout="@layout/fragment_project">
+
+    </fragment>
 
 </navigation>

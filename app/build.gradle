@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'//Kotlin synthetic
+    id 'kotlin-kapt'
 }
 
 android {
@@ -51,6 +52,30 @@ dependencies {
     //navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //lifecycle
+    // lifecycle无需单独引入，androidx.appcompat依赖了androidx.fragment，而androidx.fragment下依赖了ViewModel和 LiveData，LiveData内部又依赖了Lifecycle。
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    // lifecycle注解处理器
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // 替换 - 如果使用Java8,就用这个替换上面的lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    //以下按需引入
+    // 可选 - 帮助实现Service的LifecycleOwner
+    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    // 可选 - ProcessLifecycleOwner给整个 app进程 提供一个lifecycle
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    // 可选 - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+    // 可选 - Test helpers for LiveData
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
 
     //utilcode
     implementation "com.blankj:utilcodex:$utilcode"
