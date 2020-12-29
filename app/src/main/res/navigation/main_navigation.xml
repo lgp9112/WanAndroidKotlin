@@ -7,41 +7,41 @@
 
     <fragment
         android:id="@+id/tab_main_pager"
-        android:name="com.lgp.wanandroid.kotlin.ui.fragment.MainPagerFragment"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.MainFragment"
         android:label="MainPagerFragment"
-        tools:layout="@layout/fragment_main_pager">
+        tools:layout="@layout/fragment_main">
 
     </fragment>
 
     <fragment
         android:id="@+id/tab_knowledge_hierarchy"
-        android:name="com.lgp.wanandroid.kotlin.ui.fragment.KnowledgeHierarchyFragment"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.BlogFragment"
         android:label="KnowledgeHierarchyFragment"
-        tools:layout="@layout/fragment_knowledge_hierarchy">
+        tools:layout="@layout/fragment_blog">
 
     </fragment>
 
     <fragment
         android:id="@+id/tab_wx_article"
-        android:name="com.lgp.wanandroid.kotlin.ui.fragment.WxArticleFragment"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.SearchFragment"
         android:label="WxArticleFragment"
-        tools:layout="@layout/fragment_wx_article">
+        tools:layout="@layout/fragment_search">
 
     </fragment>
 
     <fragment
         android:id="@+id/tab_navigation"
-        android:name="com.lgp.wanandroid.kotlin.ui.fragment.NavigationFragment"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.ProjectFragment"
         android:label="NavigationFragment"
-        tools:layout="@layout/fragment_navigation">
+        tools:layout="@layout/fragment_project">
 
     </fragment>
 
     <fragment
         android:id="@+id/tab_project"
-        android:name="com.lgp.wanandroid.kotlin.ui.fragment.ProjectFragment"
+        android:name="com.lgp.wanandroid.kotlin.ui.fragment.ProfileFragment"
         android:label="ProjectFragment"
-        tools:layout="@layout/fragment_project">
+        tools:layout="@layout/fragment_profile">
 
     </fragment>
 

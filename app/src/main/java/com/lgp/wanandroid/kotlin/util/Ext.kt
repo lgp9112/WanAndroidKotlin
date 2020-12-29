@@ -1,4 +1,4 @@
-package com.lgp.wanandroid.kotlin
+package com.lgp.wanandroid.kotlin.util
 
 import android.app.Activity
 import android.os.Build

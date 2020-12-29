@@ -16,12 +16,12 @@ import com.lgp.wanandroid.kotlin.R
  * 更新时间   $
  * 更新描述
  */
-class KnowledgeHierarchyFragment: Fragment() {
+class BlogFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_knowledge_hierarchy,container,false)
+        return inflater.inflate(R.layout.fragment_blog,container,false)
     }
 }

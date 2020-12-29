@@ -3,6 +3,6 @@
     android:shape="rectangle">
     <size android:width="@dimen/dp_2" />
 
-    <gradient
-        android:startColor="@color/blue" />
+    <gradient android:startColor="@color/Blue" />
+
 </shape>
