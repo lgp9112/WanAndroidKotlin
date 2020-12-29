@@ -1,6 +1,7 @@
 package com.lgp.wanandroid.kotlin.ui
 
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         transparentStatusBar4Drawer(this, drawerLayout)
-        BarUtils.addMarginTopEqualStatusBarHeight(common_toolbar)
+        BarUtils.setStatusBarColor(barStatusDrawerFakeStatusBar,Color.TRANSPARENT)
+//        BarUtils.addMarginTopEqualStatusBarHeight(common_toolbar)
 
         initToolbar()
         initDrawerLayout()
