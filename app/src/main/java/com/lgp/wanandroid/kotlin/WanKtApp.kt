@@ -1,6 +1,7 @@
 package com.lgp.wanandroid.kotlin
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.LogUtils
@@ -8,6 +9,7 @@ import com.blankj.utilcode.util.LogUtils.IFormatter
 import com.lgp.wanandroid.kotlin.ktx.lifecycle.KtxAppLifeObserver
 import com.lgp.wanandroid.kotlin.ktx.lifecycle.KtxLifeCycleCallBack
 import java.util.*
+import kotlin.properties.Delegates
 
 
 /**
@@ -18,16 +20,21 @@ import java.util.*
  * 更新时间   $
  * 更新描述
  */
-class WanAndroidKtApp : Application() {
+class WanKtApp : Application() {
     private var isDebug: Boolean? = null
+
+    companion object {
+        var CONTEXT: Context by Delegates.notNull()
+    }
 
     override fun onCreate() {
         super.onCreate()
+        CONTEXT = applicationContext
 
         initLog()
 
-        registerActivityLifecycleCallbacks(KtxLifeCycleCallBack())
-        ProcessLifecycleOwner.get().lifecycle.addObserver(KtxAppLifeObserver())
+//        registerActivityLifecycleCallbacks(KtxLifeCycleCallBack())
+//        ProcessLifecycleOwner.get().lifecycle.addObserver(KtxAppLifeObserver())
     }
 
     private fun initLog() {

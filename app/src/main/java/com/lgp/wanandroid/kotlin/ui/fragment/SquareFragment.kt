@@ -10,18 +10,18 @@ import com.lgp.wanandroid.kotlin.R
 
 /**
  * 创建者     罗国鹏
- * 创建时间   2020/12/24 13:53
+ * 创建时间   2020/12/24 13:45
  * 描述
  * 更新者     $
  * 更新时间   $
  * 更新描述
  */
-class SearchFragment : Fragment() {
+class SquareFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_search,container,false)
+        return inflater.inflate(R.layout.fragment_square,container,false)
     }
 }

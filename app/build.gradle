@@ -32,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -77,6 +81,35 @@ dependencies {
     // 可选 - Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$arch_version"
 
+
+    //
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    //协程
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    //retrofit + okHttp3
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    //implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    //PersistentCookieJar
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    //swiperefreshlayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //轮播图
+    compile 'com.youth.banner:banner:2.1.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
     //utilcode
     implementation "com.blankj:utilcodex:$utilcode"
+
 }

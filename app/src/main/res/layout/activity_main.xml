@@ -26,6 +26,7 @@
             android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 app:expanded="true"
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
@@ -34,7 +35,6 @@
                 <!-- app:contentScrim 设置当工具栏收缩一定程度时所展示的主体颜色,-->
                 <!--scroll|enterAlwaysCollapsed|enterAlways|snap Toolbar不固定在顶部-->
                 <!--scroll|exitUntilCollapsed|snap Toolbar固定在顶部-->
-                <!--Status颜色默认使用colorPrimaryDark，因此contentScrim处使用colorPrimaryDark，会在CollapsingToolbarLayout收起时StatusBar部分颜色与工具栏颜色一致-->
                 <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:id="@+id/collapsingToolbarLayout"
                     app:title="首页"
@@ -42,7 +42,7 @@
                     app:expandedTitleTextAppearance="@style/expandedTitleTextAppearance"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:contentScrim="@color/colorPrimaryDark"
+                    app:contentScrim="@color/colorPrimary"
                     app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways|snap">
 
                     <!--parallax 设置imageView可随着滑动控件的滑动而滑动 -->
@@ -59,7 +59,7 @@
                         app:layout_collapseMode="parallax"
                         app:layout_collapseParallaxMultiplier="0.8" />
 
-                    <!--这里工具栏颜色默认是透明，当工具栏折叠后CollapsingToolbarLayout的颜色充当Toolbar背景颜色-->
+                    <!--这里工具栏颜色默认是透明，当工具栏折叠后CollapsingToolbarLayout的contentScrim颜色充当Toolbar背景颜色-->
                     <!--app:contentInsetStart="0dp" 去掉左边距-->
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/common_toolbar"
@@ -89,14 +89,10 @@
                 app:itemIconTint="@drawable/nav_item_color_state"
                 app:itemTextColor="@drawable/nav_item_color_state"
                 app:layout_behavior="com.lgp.wanandroid.kotlin.ui.behavior.BottomNavigationBehavior"
-                app:menu="@menu/bottom_nav_menu" />
+                app:menu="@menu/bottom_navigation_main" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </LinearLayout>
-
-
-
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
